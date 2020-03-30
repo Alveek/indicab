@@ -44,7 +44,7 @@
   });
 
   function updateSupplyList(e) {
-    db.collection(supllyCollection)
+    db.collection(supplyCollection)
       .doc("supply-items")
       .update({
         [e.target.name]: parseInt(e.target.value)

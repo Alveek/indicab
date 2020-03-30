@@ -81,7 +81,7 @@
     }
 
     filterImps = [order.impFact, ...filterImps];
-    db.collection(supllyCollection)
+    db.collection(supplyCollection)
       .doc("supply-items")
       .update({
         filterImps: filterImps
@@ -277,7 +277,7 @@
       document.querySelector("input[name=" + item + "]").value -= 3;
       filterImps = [0];
 
-      db.collection(supllyCollection)
+      db.collection(supplyCollection)
         .doc("supply-items")
         .update({
           filterImps: filterImps
@@ -291,7 +291,7 @@
 
   // эта функция выполняется после того, как нажата кнопка "Заменить", внутри функции replaceSupply.
   function updateSupplyListAfterReplace(item) {
-    db.collection(supllyCollection)
+    db.collection(supplyCollection)
       .doc("supply-items")
       .update({
         [item]: Number(document.querySelector("input[name=" + item + "]").value)
