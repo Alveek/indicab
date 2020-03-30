@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-export let test = true;
+export let test = false;
 export let orderCollection = test ? "orders" : "orders-prod";
 export let supplyCollection = test ? "supply" : "supply-prod";
 
