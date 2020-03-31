@@ -57,20 +57,9 @@
 
 
 <style>
-		.container {
-		  /* max-width: 98%; */
-		  display: grid;
-		  /* grid-template-columns: repeat(auto-fill, minmax(300px, max-content)); */
-		  grid-template-columns: min-content 1fr;
-		  grid-gap: 26px;
-		}
-
-		/* .supplylist {
-				  margin-left: 20px;
-				} */
-
+		
 		.orderinfo {
-		  justify-content: end;
+			margin-top: 20px;
 		}
 
 		.header {
