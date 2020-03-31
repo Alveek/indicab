@@ -83,5 +83,9 @@
     .alert {
       display: none;
     }
+
+    .manual-link {
+      display: none;
+    }
   }
 </style>
