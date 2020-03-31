@@ -31,7 +31,7 @@
 
 </header>
     {#if uid === 'W28k7LFQkaRq7W1u02mxCmCt9Uv2'}
-		<p class="alert">В гостевом режиме редактирование недоступно.</p>
+		<p class="alert">В гостевом режиме редактирование недоступно. По вопросам и предложениям писать на alveek@gmail.com</p>
 		{/if}
 
 <style>
@@ -63,8 +63,12 @@
 
   .alert {
     color: red;
-    margin-left: 40%;
-    margin-bottom: 0px;
+    margin-left: 30%;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
   }
 
   .manual-link {
