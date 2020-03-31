@@ -15,6 +15,8 @@
 
 
   {#if operator}
+  <div>
+  <a class="manual-link" target="_blank" href="https://www.notion.so/IndiCab-1f799538c5104de6beec538c3c58f875">Руководство</a>  
   <div class="logout-btn" on:click={(e)=> {
     auth.signOut().then(() => {
     reloadPage();
@@ -22,8 +24,9 @@
   })
      
   }}>
-  <a class="manual-link" target="_blank" href="https://www.notion.so/IndiCab-1f799538c5104de6beec538c3c58f875">Руководство</a>  
   <i class="fas fa-sign-out-alt"></i></div>
+  
+  </div>
   {/if}
 
 </header>
@@ -55,6 +58,7 @@
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
+    display: inline-block;
   }
 
   .alert {
