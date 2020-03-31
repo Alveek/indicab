@@ -2,6 +2,10 @@
   export let auth;
   export let operator;
   export let uid;
+
+  function reloadPage() {
+    window.location.reload();
+  }
 </script>
 
 <header>
@@ -9,12 +13,17 @@
 		Indigo Cabinet
 	</div>
 
+
   {#if operator}
   <div class="logout-btn" on:click={(e)=> {
     auth.signOut().then(() => {
+    reloadPage();
     console.log('user signed out');
   })
-  }}><i class="fas fa-sign-out-alt"></i></div>
+     
+  }}>
+  <a class="manual-link" target="_blank" href="https://www.notion.so/IndiCab-1f799538c5104de6beec538c3c58f875">Руководство</a>  
+  <i class="fas fa-sign-out-alt"></i></div>
   {/if}
 
 </header>
@@ -26,7 +35,6 @@
   header {
     padding: 0 30px;
     height: 60px;
-    /* background: #303f9f; */
     background: linear-gradient(to right, #3b309f, #303f9f);
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -37,7 +45,6 @@
   .logo {
     color: white;
     text-transform: uppercase;
-    /* margin-left: 30px; */
     font-size: 24px;
     font-weight: bold;
   }
@@ -54,6 +61,14 @@
     color: red;
     margin-left: 40%;
     margin-bottom: 0px;
+  }
+
+  .manual-link {
+    color: white;
+    text-decoration: none;
+    justify-self: end;
+    align-self: center;
+    margin-right: 40px;
   }
 
   @media (max-width: 400px) {
