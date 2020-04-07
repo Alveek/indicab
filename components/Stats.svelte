@@ -7,6 +7,7 @@
   export let currentYear;
 
   let data = [];
+  let lengthFactMonth;
   let impsPlanMonth;
   let impsFactMonth;
   let impsFactMonthA;
@@ -37,6 +38,7 @@
       .where("month", "==", parseInt(currentMonth))
       .where("year", "==", parseInt(currentYear))
       .onSnapshot(snapshot => {
+        lengthFactMonth = 0;
         impsPlanMonth = 0;
         impsFactMonth = 0;
         impsFactMonthA = 0;
@@ -62,6 +64,7 @@
         whiteUsed = 0;
 
         snapshot.docs.forEach(item => {
+          lengthFactMonth += item.data().orderLength;
           impsPlanMonth += parseInt(item.data().impPlan);
           impsFactMonth += item.data().impFact;
           impsFactMonthA += item.data().smena === "А" ? item.data().impFact : 0;
@@ -103,8 +106,18 @@
 
 <div class="container">
 	<h2>Статистика</h2>
-
-  <div>Всего кликов за месяц: <strong>{impsFactMonth}</strong></div>
+  <table class="common-stats">
+    <tr>
+      <td>Всего кликов: </td>
+      <td><strong>{impsFactMonth}</strong></td>
+    </tr>
+    <tr>
+      <td>Общий метраж: </td>
+      <td><strong>{lengthFactMonth}</strong></td>
+    </tr>
+  </table>
+  <!-- <div>Всего кликов за месяц: <strong>{impsFactMonth}</strong></div>
+  <div>Общий метраж: <strong>{lengthFactMonth}</strong></div> -->
   <table>
   <tr style="background: rgba(0, 79, 255, 0.05);">
     <th></th>
@@ -181,6 +194,22 @@
   td:first-child,
   th {
     color: #555;
+  }
+
+  .common-stats {
+    width: 246px;
+  }
+
+  .common-stats td {
+    text-align: left;
+  }
+
+  .common-stats td:first-child {
+    width: 135px;
+  }
+
+  .common-stats td:nth-child(2) {
+    text-align: right;
   }
 
   @media (max-width: 400px) {
