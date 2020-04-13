@@ -26,10 +26,6 @@
 		<div class="header">
 		<Header {auth} {uid} {operator}/>
 	</div>
-		
-		<!-- <div class="supplylist">
-			<SupplyList />
-		</div> -->
 
 		<div class="orderinfo">
 			<OrderInfo />
@@ -43,17 +39,6 @@
 	{:catch}
 <p>oops</p>
 {/await}
-
-<!-- <div class="container">
-		<div class="supplylist">
-			<SupplyList />
-		</div>
-
-		<div class="orderinfo">
-			<OrderInfo />
-		</div>
-	</div> -->
-
 
 
 
@@ -85,9 +70,7 @@
 		    margin-left: 20px;
 		  }
 
-		  /* .supplylist {
-				    grid-row: 3;
-				  } */
+		
 		}
 </style>
 -->
