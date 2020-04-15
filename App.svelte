@@ -1,3 +1,4 @@
+<!--
 <script>
 	import { auth } from "./firebase.js";
 	import SupplyList from "./components/SupplyList.svelte";
@@ -72,4 +73,6 @@
 		
 		}
 </style>
+-->
 
+<h2>Программа закрыта</h2>
