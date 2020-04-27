@@ -1,5 +1,13 @@
-<!--
-<script>
+<style>
+  .container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+  }
+</style>
+
+<!--<script>
 	import { auth } from "./firebase.js";
 	import SupplyList from "./components/SupplyList.svelte";
 	import OrderInfo from "./components/OrderInfo.svelte";
@@ -14,11 +22,7 @@
 	  operator = user;
 	  user ? (uid = user.uid) : "";
 	});
-</script>
-
-
-
-{#await operator, uid}
+</script>{#await operator, uid}
 <p>loading...</p>
 	{:then operator}
 	{#if operator}
@@ -38,11 +42,7 @@
 
 	{:catch}
 <p>oops</p>
-{/await}
-
-
-
-<style>
+{/await}<style>
 		
 		.orderinfo {
 			margin-top: 20px;
@@ -72,5 +72,7 @@
 
 		
 		}
-</style>
--->
+</style>-->
+<div class="container">
+  <img width="400px" src="/images/rip-indigo.png" alt="rip indigo image" />
+</div>
