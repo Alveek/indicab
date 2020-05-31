@@ -1,7 +1,6 @@
 <script>
   import { db } from "../firebase.js";
   import { test, orderCollection, supplyCollection } from "../order-template";
-  // import ChartImpFactSmena from "./ChartImpFactSmena";
 
   export let currentMonth;
   export let currentYear;
@@ -99,69 +98,9 @@
           impsBWMonthG +=
             item.data().smena === "Г" ? Number(item.data().bwImpTotal) : 0;
         });
-        // data = [impsFactMonthA, impsFactMonthB, impsFactMonthV, impsFactMonthG];
       });
   }
 </script>
-
-<div class="container">
-	<h2>Статистика</h2>
-  <table class="common-stats">
-    <tr>
-      <td>Всего кликов: </td>
-      <td><strong>{impsFactMonth}</strong></td>
-    </tr>
-    <tr>
-      <td>Общий метраж: </td>
-      <td><strong>{lengthFactMonth}</strong></td>
-    </tr>
-  </table>
-  <!-- <div>Всего кликов за месяц: <strong>{impsFactMonth}</strong></div>
-  <div>Общий метраж: <strong>{lengthFactMonth}</strong></div> -->
-  <table>
-  <tr style="background: rgba(0, 79, 255, 0.05);">
-    <th></th>
-    <th>Тираж</th>
-    <th>Запуск</th>
-    <th>Ч\б</th>
-    <th>Всего</th>
-  </tr>
-    <tr>
-      <td><b>А</b></td>
-      <td>{impsPlanMonthA || 0}</td>
-      <td>{impsStartMonthA || 0}</td>
-      <td>{impsBWMonthA || 0}</td>
-      <td>{impsFactMonthA || 0}</td>
-    </tr>
-    <tr>
-      <td><b>Б</b></td>
-      <td>{impsPlanMonthB || 0}</td>
-      <td>{impsStartMonthB || 0}</td>
-      <td>{impsBWMonthB || 0}</td>
-      <td>{impsFactMonthB || 0}</td>
-    </tr>
-    <tr>
-      <td><b>В</b></td>
-      <td>{impsPlanMonthV || 0}</td>
-      <td>{impsStartMonthV || 0}</td>
-      <td>{impsBWMonthV || 0}</td>
-      <td>{impsFactMonthV || 0}</td>
-    </tr>
-    <tr>
-      <td><b>Г</b></td>
-      <td>{impsPlanMonthG || 0}</td>
-      <td>{impsStartMonthG || 0}</td>
-      <td>{impsBWMonthG || 0}</td>
-      <td>{impsFactMonthG || 0}</td>
-    </tr>
-
-  </table>
-
-<!-- <div class="chart">
-  <ChartImpFactSmena {data} />
-</div> -->
-</div>
-
 
 <style>
   .container {
@@ -222,3 +161,68 @@
     }
   }
 </style>
+
+<div class="container">
+  <h2>Статистика</h2>
+  <table class="common-stats">
+    <tr>
+      <td>Всего кликов:</td>
+      <td>
+        <strong>{impsFactMonth}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>Общий метраж:</td>
+      <td>
+        <strong>{lengthFactMonth}</strong>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr style="background: rgba(0, 79, 255, 0.05);">
+      <th />
+      <th>Тираж</th>
+      <th>Запуск</th>
+      <th>Ч\б</th>
+      <th>Всего</th>
+    </tr>
+    <tr>
+      <td>
+        <b>А</b>
+      </td>
+      <td>{impsPlanMonthA || 0}</td>
+      <td>{impsStartMonthA || 0}</td>
+      <td>{impsBWMonthA || 0}</td>
+      <td>{impsFactMonthA || 0}</td>
+    </tr>
+    <tr>
+      <td>
+        <b>Б</b>
+      </td>
+      <td>{impsPlanMonthB || 0}</td>
+      <td>{impsStartMonthB || 0}</td>
+      <td>{impsBWMonthB || 0}</td>
+      <td>{impsFactMonthB || 0}</td>
+    </tr>
+    <tr>
+      <td>
+        <b>В</b>
+      </td>
+      <td>{impsPlanMonthV || 0}</td>
+      <td>{impsStartMonthV || 0}</td>
+      <td>{impsBWMonthV || 0}</td>
+      <td>{impsFactMonthV || 0}</td>
+    </tr>
+    <tr>
+      <td>
+        <b>Г</b>
+      </td>
+      <td>{impsPlanMonthG || 0}</td>
+      <td>{impsStartMonthG || 0}</td>
+      <td>{impsBWMonthG || 0}</td>
+      <td>{impsFactMonthG || 0}</td>
+    </tr>
+
+  </table>
+</div>

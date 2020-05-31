@@ -8,32 +8,6 @@
   }
 </script>
 
-<header>
-	<div class="logo">
-		Indigo Cabinet
-	</div>
-
-
-  {#if operator}
-  <div>
-  <a class="manual-link" target="_blank" href="https://www.notion.so/IndiCab-1f799538c5104de6beec538c3c58f875">Руководство</a>  
-  <div class="logout-btn" on:click={(e)=> {
-    auth.signOut().then(() => {
-    reloadPage();
-    console.log('user signed out');
-  })
-     
-  }}>
-  <i class="fas fa-sign-out-alt"></i></div>
-  
-  </div>
-  {/if}
-
-</header>
-    {#if uid === 'W28k7LFQkaRq7W1u02mxCmCt9Uv2'}
-		<p class="alert">В гостевом режиме редактирование недоступно. По вопросам и предложениям писать на alveek@gmail.com</p>
-		{/if}
-
 <style>
   header {
     padding: 0 30px;
@@ -93,3 +67,33 @@
     }
   }
 </style>
+
+<header>
+  <div class="logo">Indigo Cabinet</div>
+
+  {#if operator}
+    <div>
+      <a
+        class="manual-link"
+        target="_blank"
+        href="https://www.notion.so/IndiCab-1f799538c5104de6beec538c3c58f875">
+        Руководство
+      </a>
+      <div
+        class="logout-btn"
+        on:click={e => {
+          auth.signOut().then(() => {
+            reloadPage();
+            console.log('user signed out');
+          });
+        }}>
+        <i class="fas fa-sign-out-alt" />
+      </div>
+
+    </div>
+  {/if}
+
+</header>
+{#if uid === 'W28k7LFQkaRq7W1u02mxCmCt9Uv2'}
+  <p class="alert">В гостевом режиме редактирование недоступно.</p>
+{/if}

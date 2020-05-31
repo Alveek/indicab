@@ -84,7 +84,8 @@
         snapshot.docs.forEach(item => {
           whiteUsed +=
             item.data().rep.filter(item => item === "white").length || 0;
-          cyanUsed += item.data().rep.filter(item => item === "cyan").length || 0;
+          cyanUsed +=
+            item.data().rep.filter(item => item === "cyan").length || 0;
           magentaUsed +=
             item.data().rep.filter(item => item === "magenta").length || 0;
           yellowUsed +=
@@ -131,140 +132,13 @@
   }
 </script>
 
-
-
-<div class="container">
-	<h2 class="heading-underline">Склад</h2>
-	<div on:change={updateSupplyList} class="supplyList" >
-  <div class="titles">
-    <span>Наличие</span>
-    <span>Расход</span>
-  </div>
-    <div class="supply-item">
-      <label class="label" for="">White</label>
-      <input type="number" autocomplete="off" name="white" value="{supplyList.white}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={whiteUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Cyan</label>
-      <input type="number" autocomplete="off" name="cyan" value="{supplyList.cyan}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={cyanUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Magenta</label>
-      <input type="number" autocomplete="off" name="magenta" value="{supplyList.magenta}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={magentaUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Yellow</label>
-      <input type="number" autocomplete="off" name="yellow" value="{supplyList.yellow}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={yellowUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Black</label>
-      <input type="number" autocomplete="off" name="black" value="{supplyList.black}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={blackUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Orange</label>
-      <input type="number" autocomplete="off" name="orange" value="{supplyList.orange}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={orangeUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Violet</label>
-      <input type="number" autocomplete="off" name="violet" value="{supplyList.violet}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={violetUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Green</label>
-      <input type="number" autocomplete="off" name="green" value="{supplyList.green}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={greenUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Primer</label>
-      <input type="number" autocomplete="off" name="primer" value="{supplyList.primer}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={primerUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">PIP</label>
-      <input type="number" autocomplete="off" name="pip" value="{supplyList.pip}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={pipUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Blanket</label>
-      <input type="number" autocomplete="off" name="blanket" value="{supplyList.blanket}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={blanketUsed || 0}>
-    </div>
-    <div class="supply-item filter-io">
-      <label for="">Filter IO <span class="fio-imps-output">({totalFilterImps})</span></label>
-      <input type="number" autocomplete="off" name="filterIO" value="{supplyList.filterIO}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={filterIOUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Selica Filter</label>
-      <input type="number" autocomplete="off" name="selicaFilter" value="{supplyList.selicaFilter}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={selicaFilterUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Imaging Oil</label>
-      <input type="number" autocomplete="off" name="imagingOil" value="{supplyList.imagingOil}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={imagingOilUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Imaging Agent</label>
-      <input type="number" autocomplete="off" name="imagingAgent" value="{supplyList.imagingAgent}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={imagingAgentUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">BID Base</label>
-      <input type="number" autocomplete="off" name="bidBase" value="{supplyList.bidBase}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={bidBaseUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">BID Roller</label>
-      <input type="number" autocomplete="off" name="bidRoller" value="{supplyList.bidRoller}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={bidRollerUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Charge Roller</label>
-      <input type="number" autocomplete="off" name="chargeRoller" value="{supplyList.chargeRoller}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={chargeRollerUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Wiper</label>
-      <input type="number" autocomplete="off" name="wiper" value="{supplyList.wiper}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={wiperUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Sponge Short</label>
-      <input type="number" autocomplete="off" name="spongeShort" value="{supplyList.spongeShort}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={spongeShortUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Sponge Long</label>
-      <input type="number" autocomplete="off" name="spongeLong" value="{supplyList.spongeLong}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={spongeLongUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">BCS Roller</label>
-      <input type="number" autocomplete="off" name="bcsRoller" value="{supplyList.bcsRoller}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={bcsRollerUsed || 0}>
-    </div>
-    <div class="supply-item">
-      <label for="">Underlayer</label>
-      <input type="number" autocomplete="off" name="underlayer" value="{supplyList.underlayer}">
-      <input class="supply-usage-input" type="text" autocomplete="off" disabled value={underlayerUsed || 0}>
-    </div>
-  </div>
-</div>
-
 <style>
   .container {
     background: #fff;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
-    width: 270px;
+    /* width: 270px; */
     padding: 0 20px;
     padding-bottom: 30px;
   }
@@ -322,3 +196,338 @@
     }
   }
 </style>
+
+<div class="container">
+  <h2 class="heading-underline">Склад</h2>
+  <div on:change={updateSupplyList} class="supplyList">
+    <div class="titles">
+      <span>Наличие</span>
+      <span>Расход</span>
+    </div>
+    <div class="supply-item">
+      <label class="label" for="">White</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="white"
+        value={supplyList.white} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={whiteUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Cyan</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="cyan"
+        value={supplyList.cyan} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={cyanUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Magenta</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="magenta"
+        value={supplyList.magenta} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={magentaUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Yellow</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="yellow"
+        value={supplyList.yellow} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={yellowUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Black</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="black"
+        value={supplyList.black} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={blackUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Orange</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="orange"
+        value={supplyList.orange} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={orangeUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Violet</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="violet"
+        value={supplyList.violet} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={violetUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Green</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="green"
+        value={supplyList.green} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={greenUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Primer</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="primer"
+        value={supplyList.primer} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={primerUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">PIP</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="pip"
+        value={supplyList.pip} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={pipUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Blanket</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="blanket"
+        value={supplyList.blanket} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={blanketUsed || 0} />
+    </div>
+    <div class="supply-item filter-io">
+      <label for="">
+        Filter IO
+        <span class="fio-imps-output">({totalFilterImps})</span>
+      </label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="filterIO"
+        value={supplyList.filterIO} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={filterIOUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Selica Filter</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="selicaFilter"
+        value={supplyList.selicaFilter} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={selicaFilterUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Imaging Oil</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="imagingOil"
+        value={supplyList.imagingOil} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={imagingOilUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Imaging Agent</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="imagingAgent"
+        value={supplyList.imagingAgent} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={imagingAgentUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">BID Base</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="bidBase"
+        value={supplyList.bidBase} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={bidBaseUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">BID Roller</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="bidRoller"
+        value={supplyList.bidRoller} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={bidRollerUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Charge Roller</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="chargeRoller"
+        value={supplyList.chargeRoller} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={chargeRollerUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Wiper</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="wiper"
+        value={supplyList.wiper} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={wiperUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Sponge Short</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="spongeShort"
+        value={supplyList.spongeShort} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={spongeShortUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Sponge Long</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="spongeLong"
+        value={supplyList.spongeLong} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={spongeLongUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">BCS Roller</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="bcsRoller"
+        value={supplyList.bcsRoller} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={bcsRollerUsed || 0} />
+    </div>
+    <div class="supply-item">
+      <label for="">Underlayer</label>
+      <input
+        type="number"
+        autocomplete="off"
+        name="underlayer"
+        value={supplyList.underlayer} />
+      <input
+        class="supply-usage-input"
+        type="text"
+        autocomplete="off"
+        disabled
+        value={underlayerUsed || 0} />
+    </div>
+  </div>
+</div>

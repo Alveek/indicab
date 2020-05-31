@@ -7,7 +7,9 @@
   let error = false;
 
   function logIn() {
-    auth.signInWithEmailAndPassword(email, password).catch(err => (error = true));
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch(err => (error = true));
   }
 
   function setPsw() {
@@ -20,38 +22,6 @@
     }
   }
 </script>
-
-<div class="container">
-
-	<form on:submit|preventDefault = {logIn} id="login-form">
-  <h2>Indigo Cabinet</h2>
-		<!-- <div class="input-field">
-			<label for="login-email">Email address</label>
-			<input class="form-control" type="email" id="login-email" required autocomplete="off" bind:value={email} />
-		</div> -->
-    <div class="input-field">
-      <label for="login-user">Войти как: </label>
-      <select on:change={(e)=> {
-        email = e.target.value;
-        setPsw()
-        }} id="login-user" bind:value={email}>
-        <option value="guest@indigo.ru">Гость</option>
-        <option value="operator@indigo.ru">Оператор</option>
-      </select>
-    </div>
-    {#if showPswInput === true}
-		<div class="input-field">
-			<label for="login-password">Введите пароль:</label>
-			<input class="form-control" type="password" id="login-password" required autocomplete="off" bind:value={password}/>
-		</div>
-    {/if}
-		<button class="btn info">Войти</button>
-    {#if error}
-    <p style="color: red">Неверный пароль</p>
-    {/if}
-	</form>
-</div>
-
 
 <style>
   .container {
@@ -98,3 +68,44 @@
     margin-bottom: 30px;
   }
 </style>
+
+<div class="container">
+
+  <form on:submit|preventDefault={logIn} id="login-form">
+    <h2>Indigo Cabinet</h2>
+
+    <div class="input-field">
+      <label for="login-user">Войти как:</label>
+      <select
+        on:change={e => {
+          email = e.target.value;
+          setPsw();
+        }}
+        id="login-user"
+        bind:value={email}>
+        <option value="guest@indigo.ru">Гость</option>
+        <option value="operator@indigo.ru">Оператор</option>
+      </select>
+    </div>
+
+    {#if showPswInput === true}
+      <div class="input-field">
+        <label for="login-password">Введите пароль:</label>
+        <input
+          class="form-control"
+          type="password"
+          id="login-password"
+          required
+          autocomplete="off"
+          bind:value={password} />
+      </div>
+    {/if}
+
+    <button class="btn info">Войти</button>
+
+    {#if error}
+      <p style="color: red">Неверный пароль</p>
+    {/if}
+
+  </form>
+</div>
